@@ -4,6 +4,7 @@
 * The 4 views are described below:
     1. ## Logical View
         * Functionality provided by the system
+        * Data entities, attributes and their relationships
     2. ## Process View
         * How system processes communicate and how the data is processed
     3. ## Development View
@@ -15,12 +16,16 @@
 * Let's start with context view for a first level understanding
 ---
 ## 1. Context View
-* 
+![Context View](./images/context_view.JPG)
+* Ovals represent user stories
+* There are 2 user stories for Botanist and 1 user story for User 
 ---
-## 2. Context View
-* 
+## 2. Logical View
+* Identify what data needs to be there (always the first step)
+* Different classes which link the data and attributes together
+![Logical View](./images/logical_view.JPG)
 ---
-## 3. Context View
+## 3. Process View
 * 
 ---
 ## 4. Context View
