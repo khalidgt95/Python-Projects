@@ -26,9 +26,17 @@
 ![Logical View](./images/logical_view.JPG)
 ---
 ## 3. Process View
-* 
+* Deals with the steps in each user story
+* We can use flowcharts to describe the processes involved in each user story
+* We make [activity diagrams](https://en.wikipedia.org/wiki/Activity_diagram) for steps
+* In our case, there are three user stories
+    1. Botanist uploads training data
+    2. Train classifier with a ***k*** value
+    3. Return prediction for a new request
+* For scenario #1, we can make the following activity diagram
+![Logical View](./images/process_view.JPG)
 ---
-## 4. Context View
+## 4. Development View
 * 
 ---
 ## 5. Context View
