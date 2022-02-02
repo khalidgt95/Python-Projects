@@ -11,6 +11,7 @@
         * How software components are going to be implemented and class definitions
     4. ## Physical View
         * How different components are integrated and deployed
+        * How software is going to be installed on physical hardware
     5. ## Context View
         * External actors or APIs that will interact with the system
 * Let's start with context view for a first level understanding
@@ -37,7 +38,13 @@
 ![Logical View](./images/process_view.JPG)
 ---
 ## 4. Development View
-* 
+* We can indetify 3 modules that need to be implemented for the system to work correctly
+![Development View](./images/development_view.JPG)
+* Each component has dependencies on external packages which belong to 3rd parties
+* The **Data Model** is developed by us, hence it has no external dependencies
 ---
-## 5. Context View
-* 
+## 5. Physical View
+* There are mutliple strategies to depoly this application(desktop, mobile or cloud)
+* If deployed on a web server, it uses the following architecture
+![Physical View](./images/physical_view.JPG)
+* The Classifier is presented as a black box, while other components are not described in detail
