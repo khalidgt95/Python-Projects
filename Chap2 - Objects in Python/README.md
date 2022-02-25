@@ -15,7 +15,41 @@ class abc:
         self.y = 0
 ```
 * In reality, there is only 1 method which accepts different objects of the same class
+* To pass an object to a method, we can use the following type hint:
+```python
+class Point:
+    def calculate_distance(self, other: "Point") -> float:
+        return math.hypot(self.x - other.x, self.y - other.y)
+```
+* In python, the constructor is called as below:
+ ```python
+class Point:
+    def __init__(self, 
+                 x: float = 0, 
+                 y: float = 0
+            ) -> None:
+            pass
+
+    def calculate_distance(self, other: "Point") -> float:
+        return math.hypot(self.x - other.x, self.y - other.y)
+```
 ---
 # Python class naming convention
 * [PEP8](https://www.python.org/dev/peps/pep-0008/) recommends **CapWords** styling 
-* 
+---
+# Python Documentation
+* We can run **doctest** to test if our documentation is correct or not
+```
+python -m doctest <python_file>.py
+```
+* We can also use **mypy** to test if our type hints are working correctly or not
+```
+mypy --strict <python_file>.py
+```
+---
+# Virtual Environments
+* To create a virtual environment, we can use the following syntax
+```
+$> python -m venv <my_environment_name>
+$> source <my_environment_name>/bin/activate
+```
