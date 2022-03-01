@@ -33,8 +33,34 @@ class LongNameDict(dict[str, int]):
         return longest
 ```
 ---
-# Multiple Inheritance
-## Mixin
+# Mixin
+* Mixing one small class with other larger classes
 * It is a class definition which does not exist by itself but provides additional functionality to the inheriting classes
 * Useful when a single functionality needs to be shared across different classes 
-* 
+---
+# Multiple Inheritance
+* Consider the following diamong inheritance problem
+```
+                        BaseClass
+                        /       \
+                       /         \
+                      /           \
+                     /             \ 
+               LeftSubClass    RightSubClass
+                    \               /
+                     \             /  
+                      \           /   
+                       \         /
+                         SubClass
+```
+* As can be seen, the constructor of BaseClass will be called twice, each for the subclasses
+* To solve this problem, python makes this diamond linear as shown below:
+```
+    SubClass --- LeftSubClass --- RightSubClass --- BaseClass
+```
+* The ordering is determined by the **Method Resolution Order**
+* To check the ordering, we can use the ```__mro__``` attribute of the class as shown:
+```python
+print(SubClass.__mro__)
+```
+* **Important**: Always use ```super()``` to call super class's methods
