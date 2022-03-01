@@ -33,3 +33,13 @@ class Contact:
             f"{self.name!r}, {self.email!r}"
             f")"
         )
+
+class Friend(Contact):
+    def __init__(self, name: str, email: str, phone: str) -> None:
+        
+        """
+        If the constructor of super class expects arguments, then we have to pass them
+        Otherwise it throws error
+        """
+        self.phone = phone
+        super().__init__(name, email)

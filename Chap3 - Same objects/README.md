@@ -32,3 +32,9 @@ class LongNameDict(dict[str, int]):
                 longest = key
         return longest
 ```
+---
+# Multiple Inheritance
+## Mixin
+* It is a class definition which does not exist by itself but provides additional functionality to the inheriting classes
+* Useful when a single functionality needs to be shared across different classes 
+* 
