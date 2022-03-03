@@ -56,3 +56,21 @@ def call():
     except: # never do like this
         ...
 ```
+# Where it makes sense to use try clause
+* If there is a piece of code where you think that something can go wrong due to any reason, it's better to wrap it into ```try``` block
+* Advantage is that you do not need to check for all the edge cases that can arise
+# Creating your own exceptions
+* We can inherit from the ```Exception``` class as shown below
+```python
+class MyCustomException(Exception):
+    pass
+```
+* The custom exception behaves like any other exception
+```python
+def call():
+    raise MyCustomException("Specific problem exception")
+```
+* The class name should define what the exception is about
+# Importance of Exceptions
+* It can serve as a way to convey context information between two components
+* The caller can behave differently based on the type of exception encountered
