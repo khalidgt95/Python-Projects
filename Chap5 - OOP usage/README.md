@@ -43,3 +43,34 @@ class Polygon:
 
 ```
 --- 
+# Properties
+## Why do we need them
+* In python, there is no concept of private variables
+* In traditional languages, we have getters and setters to set the variable value
+* If we want to do some checking on the value before assignment, we could use getters and setters, but this is not the pythonic way
+* In python, we use the **property** function to make methods that look like attributes
+* The following example shows this:
+```python
+class S:
+    def __init__(self, name: str, age: int) -> None:
+        self._age = age
+        self._name = name # _name denotes a private attribute
+
+    def _set_name(self, name:str) -> None:
+        if name == "" or name == "John":
+            raise ValueError("Empty and John are not allowed")
+        self._name = name
+    def _get_name(self) -> str:
+        return self._name
+
+    name = property(_get_name, _set_name)
+"""
+>>> s = S("aa", 12)
+>>> s.name
+aaa
+>>> s.name = ""
+Value Error: "Empty and John are not allowed"
+"""
+```
+* It is useful in cases when we want to perform any operation (logging, deleting, updating) when updating the variable
+* 
