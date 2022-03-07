@@ -73,4 +73,21 @@ Value Error: "Empty and John are not allowed"
 """
 ```
 * It is useful in cases when we want to perform any operation (logging, deleting, updating) when updating the variable
-* 
+## Using decorators for properties
+* We can also use decorators to act as a short hand syntax shown below:
+```python
+class A:
+    def __init__(self, name: str) -> None:
+        self._name = name
+        self._state: str
+    
+    @property
+    def foo(self) -> str:
+        print("Getting {self._name}'s state")
+        return self._state
+    
+    @foo.setter  # Name should exactly be same as the property
+    def foo(self, state: str) -> None:
+        print(f"Setting {self._name}'s State to {state!r}")
+        self._state = state 
+```
