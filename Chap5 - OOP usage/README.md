@@ -91,3 +91,21 @@ class A:
         print(f"Setting {self._name}'s State to {state!r}")
         self._state = state 
 ```
+---
+# When to use properties
+* When we want to do some action when modifying the attributes, then properties can be a good option
+* Custom getters can be used to perform calculation on the fly as shwon below:
+```python
+class AvgList(List[int]):  # Inherting base class to get access to all the values
+
+    @property
+    def average(self) -> float:
+        return sum(self) / len(self)
+
+"""
+>>> a = AvgList([1,2,3,4,62,3,32])
+>>> a.avg
+23.2
+"""
+```
+* Custom setters can useful for data validation
