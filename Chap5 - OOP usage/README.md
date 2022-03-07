@@ -109,3 +109,16 @@ class AvgList(List[int]):  # Inherting base class to get access to all the value
 """
 ```
 * Custom setters can useful for data validation
+---
+# Manager Objects (see page 180)
+* Higher level obects that manage other objects using composition
+* These classes are made to be generic to work across different use cases
+* Combines together functionalities from different objects which becomes clear once the objects start interacting with each other
+* They encapsulate the complexity and provide an easy to use interface for all other objects
+---
+# Design considerations of an OOP system
+* Leave nothing to chance, check and validate all of the data when loading or doing any operation (casting, conversion, calculation, etc.)
+* Use custom exception classes to make it easy to identify the problem
+* A good design means to dispose number of bad designs
+* We start with a basic design and try to come up with as many design considerations as possible given the current information
+* **It is not possible to directly arrive at the perfect design in the first go**
