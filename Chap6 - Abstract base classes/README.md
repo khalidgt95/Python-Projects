@@ -25,3 +25,38 @@ class AbsClass(abc.ABC):
                          List  Dict  Tuples   . . . 
 ```
 * We can also extend the collections classes to create our own datatypes
+---
+# The collections.abc module
+* This module provides the abstract base class definitions for built-in collections such as ```list```, ```set``` or ```dict```
+* Let's consider the example of the concrete ```dict``` class
+* It's inheritance diagram can be seen as below:
+```
+        (A)Container           (A)Iterable       (A)Sized
+        + __contains__(item)   + __iter__()      +__len(item)
+
+                        \           |           /
+                          \         |         /
+                            \       |       /
+                              \     |     /
+                                \   |   /
+                              (A)Collection
+                                    |
+                                    |
+                                (A)Mapping
+                                + __getitem__(key)
+                                + keys()
+                                + items()
+                                + values()
+                                + get(key, default)  
+                                    |
+                                    |
+                                (A)MutableMapping
+                                + __setitem__(key, value)
+                                + __delitem__(key)
+                                    |
+                                    |
+                                  dict
+```
+* 
+* 
+* 
