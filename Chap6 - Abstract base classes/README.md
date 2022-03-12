@@ -10,4 +10,18 @@ class AbsClass(abc.ABC):
     def run(self) -> None:
         ... # Special syntax which means that it needs to be implemented
 ```
-* 
+---
+# Abstract class Collections
+* The base class of collections is the container class
+```
+                            Container
+                                |
+                                |
+                                |
+                           Collections
+                             /  |  \ 
+                            /   |   \
+                           /    |    \
+                         List  Dict  Tuples   . . . 
+```
+* We can also extend the collections classes to create our own datatypes
