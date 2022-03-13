@@ -57,6 +57,8 @@ class AbsClass(abc.ABC):
                                     |
                                   dict
 ```
-* 
-* 
+---
+# Creating own abstract base classes 
+* In the file ```CreatingAbstractClass.py``` we give the example of defining our own abstract class to simulate a dice game
+* The structure of the abstract classes goes from the most generic to specialized business logic
 * 
