@@ -1,6 +1,6 @@
 import abc
 import random
-from typing import Type
+from typing import Any, Type
 
 class Die(abc.ABC):
 
@@ -59,4 +59,54 @@ class SimpleDice(Dice):
     def roll(self) -> None:
         for d in self.dice:
             d.roll()       # Rolling for each instance of Die
-            
+
+
+# To simulate operator overloading, we implement another Dice class
+class DDice:
+
+    """
+    This class demonstrates operator overloading
+    We implement the __add__ and __radd__ built-in methods
+    The same is true for other operators
+    """
+    def __init__(self, *die_class: Type[Die]) -> None:
+        self.dice = [dc() for dc in die_class]
+        self.adjust: int = 0
+
+    def plus(self, adjust: int = 0) -> "DDice":
+        self.adjust = adjust
+        return self
+
+    def roll(self) -> None:
+        for d in self.dice:
+            d.roll()
+    
+    @property
+    def total(self) -> int:
+        return sum(d.face for d in self.dice) + self.adjust
+
+    def __add__(self, die_class: Any) -> "DDice":
+        if isinstance(die_class, type) and issubclass(die_class, Die):
+            new_classes = [type(d) for d in self.dice] + [die_class]
+            new = DDice(*new_classes).plus(self.adjust)
+            return new
+        elif isinstance(die_class, int):
+            new_classes = [type(d) for d in self.dice]
+            new = DDice(*new_classes).plus(die_class)
+            return new
+        else:
+            return NotImplemented
+
+    def __radd__(self, die_class: Any) -> "DDice":
+        return self.__add__(die_class)
+        # if isinstance(die_class, type) and issubclass(die_class, Die):
+        #     new_classes = [die_class] + [type(d) for d in self.dice] 
+        #     new = DDice(*new_classes).plus(self.adjust)
+        #     return new
+        # elif isinstance(die_class, int):
+        #     new_classes = [type(d) for d in self.dice]
+        #     new = DDice(*new_classes).plus(die_class)
+        #     return new
+        # else:
+        #     return NotImplemented
+

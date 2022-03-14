@@ -61,4 +61,22 @@ class AbsClass(abc.ABC):
 # Creating own abstract base classes 
 * In the file ```CreatingAbstractClass.py``` we give the example of defining our own abstract class to simulate a dice game
 * The structure of the abstract classes goes from the most generic to specialized business logic
+---
+# Operator Overloading
+* Most of the numerical operators such `+`, `-`, `/`, etc. call special methods under the hood
+* In the example of `+`, it calls the `__add__()` method of the class
+* In the following piece of code, we can see how we can change the default behaviour
+```python
+class A:
+
+    def __init__(self) -> None:
+        ...
+    
+    def __add__(self, class_type: Any) -> "A":
+        ...
+    
+    def __radd__(self, class_type: Any) -> "A":
+        ...
+```
+* Since the operations need to be commutative, we need to implement both `__add__` and `__radd__` to cover cases like `A + 6` or `6 + A`:
 * 
