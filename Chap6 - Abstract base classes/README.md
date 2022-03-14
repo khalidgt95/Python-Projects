@@ -79,4 +79,15 @@ class A:
         ...
 ```
 * Since the operations need to be commutative, we need to implement both `__add__` and `__radd__` to cover cases like `A + 6` or `6 + A`:
+---
+# Extending built-in datatypes (dict, list, etc.)
+* We can extend the built-in datatypes such as `list`, `dict`, etc.
+* We can it's special methods to get our desired behaviour
+* In the file `ExtendingDict.py` file, we extend `dict` for adding special functionality
+* The general structure is as follows:
+```python
+class A(Dict[Hashable, Any]):
+
+    # Implement any of the special methods present in the abstract classes
+```
 * 
