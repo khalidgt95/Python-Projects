@@ -90,4 +90,10 @@ class A(Dict[Hashable, Any]):
 
     # Implement any of the special methods present in the abstract classes
 ```
-* 
+---
+# MetaClasses
+* When we create a new class, the class `type` creates this class
+* They help create our class's objects
+* All of the classes by default use the `type` class to create them
+* They can be useful to add extra functionality during the creation of the target class
+* Also, they can add additional functionality to an already existing method
