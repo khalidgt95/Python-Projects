@@ -8,3 +8,6 @@
 * Acts as a placeholder for a set of related attributes
 * We don't need to write a constructor
 ---
+# Dictionaries
+* They are the key-value data structure
+* The key can be anything as long as it is hashable
