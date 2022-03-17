@@ -37,4 +37,21 @@ var = defaultdict(<Any_class>)  # This can be int, float or custom defined class
 15
 ```
 ---
-  
+# Sorting Lists
+* We can use the `sort()` method of list to sort primitive datatypes
+* To sort a list of objects, the object must implement the `__lt__()` method
+* The basic structure to do this is as follows:
+```python
+class A:
+
+    val: int
+
+    def __lt__(self, other: Any): # Any so that we can use ducktyping for object of other classes
+        return self.val < other.val
+```
+* To sort on a specific attribute, we can do the following:
+```python
+>>> import operator
+>>> file_list.sort(key=operator.attrgetter("name"))
+```
+--- 
