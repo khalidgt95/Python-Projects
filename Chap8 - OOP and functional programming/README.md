@@ -43,3 +43,25 @@ def caller(*test: Callable[[int], bool]) -> None:
 * We have to be careful about the order of functions we pass
 * First function will be evaluated first, followed by other
 --- 
+# Monkey patching
+* Assigning a function of a class to another function at runtime
+```python
+class A:
+    def method_1():
+        ...
+
+def method_2():
+    ...
+
+def method_class_patch(self):
+    ...
+#  To patch a method of class
+>>> obj = A()
+>>> obj.method_1 = method_2
+>>> obj.method_1()
+# class method 2
+
+# To patch a class method directly
+A.method_1 = method_class_patch
+```
+* 
