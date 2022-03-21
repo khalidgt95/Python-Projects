@@ -64,4 +64,8 @@ def method_class_patch(self):
 # To patch a class method directly
 A.method_1 = method_class_patch
 ```
-* 
+---
+# Context manager
+* Allows proper closing of resources in case an exception occurs
+* To make any class a context manager, it must have the `__enter__()` and `__exit__()` methods implemented
+---
